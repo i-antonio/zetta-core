@@ -1,5 +1,5 @@
 {
-  "name": "json-server-angular-project",
+  "name": "zetta-core",
   "version": "1.0.0",
   "description": "Projeto Angular com JSON Server para criar uma API REST fake",
   "scripts": {

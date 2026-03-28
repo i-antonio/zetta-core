@@ -52,11 +52,17 @@
       "categoria": "Eletrônicos"
     },
     {
-      "id": 3,
-      "nome": "Teclado",
-      "preco": 150,
-      "estoque": 50,
-      "categoria": "Eletrônicos"
+      "nome": "teste",
+      "descricao": "tteeree",
+      "categoria": "asdasdasdas",
+      "preco": 10,
+      "imagem_url": "",
+      "marca": "",
+      "desconto": 0,
+      "estoque": 10,
+      "status": "disponivel",
+      "acessorios": [],
+      "id": 3
     }
   ],
   "posts": [

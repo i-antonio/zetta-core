@@ -92,6 +92,14 @@ input {
   font-size: 14px;
 }
 
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
 input:focus {
   outline: none;
   border-color: #667eea;

@@ -1,0 +1,25 @@
+<div class="card">
+  <h2>🛒 Lista de Produtos</h2>
+  
+  <div class="controls">
+    <button (click)="loadProdutos()">🔄 Atualizar Lista</button>
+  </div>
+  
+  <div class="error" *ngIf="error">{{ error }}</div>
+  
+  <div class="loading" *ngIf="loading">Carregando...</div>
+  
+  <div class="empty-message" *ngIf="!loading && produtos.length === 0">
+    Nenhum produto encontrado.
+  </div>
+  
+  <div class="item-list" *ngIf="!loading && produtos.length > 0">
+    <div class="item" *ngFor="let produto of produtos">
+      <p><strong>ID:</strong> {{ produto.id }}</p>
+      <p><strong>Nome:</strong> {{ produto.nome }}</p>
+      <p><strong>Preço:</strong> R$ {{ produto.preco.toFixed(2) }}</p>
+      <p><strong>Estoque:</strong> {{ produto.estoque }} unidades</p>
+      <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
+    </div>
+  </div>
+</div>

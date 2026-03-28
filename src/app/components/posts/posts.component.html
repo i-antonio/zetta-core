@@ -1,0 +1,25 @@
+<div class="card">
+  <h2>📰 Lista de Posts</h2>
+  
+  <div class="controls">
+    <button (click)="loadPosts()">🔄 Atualizar Lista</button>
+  </div>
+  
+  <div class="error" *ngIf="error">{{ error }}</div>
+  
+  <div class="loading" *ngIf="loading">Carregando...</div>
+  
+  <div class="empty-message" *ngIf="!loading && posts.length === 0">
+    Nenhum post encontrado.
+  </div>
+  
+  <div class="item-list" *ngIf="!loading && posts.length > 0">
+    <div class="item" *ngFor="let post of posts">
+      <p><strong>ID:</strong> {{ post.id }}</p>
+      <p><strong>Título:</strong> {{ post.titulo }}</p>
+      <p><strong>Conteúdo:</strong> {{ post.conteudo }}</p>
+      <p><strong>Autor:</strong> {{ post.autor }}</p>
+      <p><strong>Data:</strong> {{ post.data }}</p>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
@@ -12,10 +12,14 @@ import { Produto } from '../../models/models';
   styleUrls: ['./produtos.component.css']
 })
 export class ProdutosComponent implements OnInit {
+  @ViewChild('editform') editForm!: ElementRef;
+
   produtos: Produto[] = [];
   loading = false;
   error: string | null = null;
   successMessage: string | null = null;
+  editando = false; 
+  produtoEditando: Produto | null = null;
 
   newProduto: Produto = {
     nome: '',
@@ -93,4 +97,31 @@ export class ProdutosComponent implements OnInit {
       }
     });
   }
+
+  abrirEdicao(produto : Produto) : void {
+    this.produtoEditando = { ...produto};
+    this.editando = true;
+
+    setTimeout(() => {
+    this.editForm.nativeElement.scrollIntoView({ behavior: 'smooth' });
+  }, 50);
 }
+  cancelarEdicao(): void {
+    this.editando = false;
+    this.produtoEditando = null;
+  }
+  salvarEdicao(): void {
+  if (!this.produtoEditando || !this.produtoEditando.id) return;
+
+  this.apiService.updateProduto(this.produtoEditando.id, this.produtoEditando).subscribe({
+    next: () => {
+      this.successMessage = '✅ Produto atualizado com sucesso!';
+      this.cancelarEdicao();
+      this.loadProdutos();
+      setTimeout(() => this.successMessage = null, 3000);
+    },
+    error: () => { this.error = 'Erro ao atualizar produto.'; }
+  })
+  }
+}
+

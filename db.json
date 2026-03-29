@@ -47,22 +47,22 @@
     {
       "id": 2,
       "nome": "Mouse",
-      "preco": 50,
+      "preco": 55,
       "estoque": 100,
       "categoria": "Eletrônicos"
     },
     {
-      "nome": "teste",
-      "descricao": "tteeree",
-      "categoria": "asdasdasdas",
-      "preco": 10,
+      "nome": "Teste",
+      "descricao": "isso é um teste",
+      "categoria": "teste",
+      "preco": 101,
       "imagem_url": "",
       "marca": "",
       "desconto": 0,
-      "estoque": 10,
-      "status": "disponivel",
+      "estoque": 1001,
+      "status": "indisponivel",
       "acessorios": [],
-      "id": 3
+      "id": 4
     }
   ],
   "posts": [

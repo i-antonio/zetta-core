@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Produto } from '../../models/models';
 import { ButtonComponent } from '../button/button.component';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [CommonModule, FormsModule, ButtonComponent],
+  imports: [CommonModule, FormsModule, ButtonComponent, ProductCardComponent],
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css']
 })

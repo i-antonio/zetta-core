@@ -1,0 +1,13 @@
+<a href="/product/1" data-discover="true">
+    <div data-slot="card" class="bg-card text-card-foreground h-full flex flex-col gap-6 rounded-xl border group overflow-hidden hover:shadow-lg transition-shadow">
+        <div class="aspect-square overflow-hidden bg-gray-100"><img
+                src="{{ imageUrl }}"
+                alt="{{ description }}"
+                class="h-full w-full object-cover transition-transform group-hover:scale-105"></div>
+        <div data-slot="card-content" class="[&amp;:last-child]:pb-6 p-4">
+            <p class="text-sm text-gray-500">{{ category }}</p>
+            <h3 class="font-medium mt-1 h-12 line-clamp-2">{{ title }}</h3>
+            <p class="text-lg font-semibold mt-2"> R$ {{ price.toFixed(2).replace('.', ',') }}</p>
+        </div>
+    </div>
+</a>

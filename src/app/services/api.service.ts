@@ -16,6 +16,10 @@ export class ApiService {
     return this.http.get<Produto[]>(`${this.apiUrl}/produtos`);
   }
 
+  getProdutoById(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/produtos/${id}`);
+  }
+
   createProduto(produto: Produto): Observable<Produto> {
     return this.http.post<Produto>(`${this.apiUrl}/produtos`, produto);
   }

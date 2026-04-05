@@ -23,19 +23,6 @@ export class ProdutosComponent implements OnInit {
   editando = false; 
   produtoEditando: Produto | null = null;
 
-  newProduto: Produto = {
-    nome: '',
-    descricao: '',
-    categoria: '',
-    preco: 0,
-    imagem_url: '',
-    marca: '',
-    desconto: 0,
-    estoque: 0,
-    status: '',
-    acessorios: []
-  };
-
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
@@ -54,35 +41,6 @@ export class ProdutosComponent implements OnInit {
       error: (err) => {
         this.error = 'Erro ao carregar produtos. Certifique-se de que o JSON Server está rodando.';
         this.loading = false;
-        console.error('Erro:', err);
-      }
-    });
-  }
-
-  onSubmit(): void {
-    if (!this.newProduto.nome || !this.newProduto.categoria || this.newProduto.preco <= 0
-      || this.newProduto.estoque < 0 || !this.newProduto.status) return;
-
-    this.apiService.createProduto(this.newProduto).subscribe({
-      next: () => {
-        this.successMessage = '✅ Produto criado com sucesso!';
-        this.newProduto = {
-          nome: '',
-          descricao: '',
-          categoria: '',
-          preco: 0,
-          imagem_url: '',
-          marca: '',
-          desconto: 0,
-          estoque: 0,
-          status: '',
-          acessorios: []
-        };
-        this.loadProdutos();
-        setTimeout(() => this.successMessage = null, 3000);
-      },
-      error: (err) => {
-        this.error = 'Erro ao criar produto.';
         console.error('Erro:', err);
       }
     });

@@ -1,0 +1,115 @@
+<div class="grid grid-cols-1">
+    <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+    <div class="error" *ngIf="error">{{ error }}</div>
+
+    <div class="bg-white rounded-xl shadow-lg p-6">
+        <div class="flex justify-between items-center mb-6 pb-3 border-b-2">
+            <h2 class="text-2xl font-semibold text-gray-800 border-blue-500">
+                <i class="fas fa-edit text-blue-500 mr-2"></i>
+                Informações do Produto
+            </h2>
+
+            <button *ngIf="produto.id" (click)="deleteProduto(produto.id)"
+                class="cursor-pointer px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition font-semibold shadow-md">
+                <i class="fas fa-trash-alt mr-2"></i>
+                Excluir Produto
+            </button>
+        </div>
+
+        <form class="space-y-5" (ngSubmit)="onSubmit()">
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">
+                    <i class="fas fa-tag text-gray-500 mr-2"></i>
+                    Nome do Produto *
+                </label>
+                <input type="text" placeholder="Ex: Smartphone XYZ" [(ngModel)]="produto.nome" name="nome"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-dollar-sign text-gray-500 mr-2"></i>
+                        Preço *
+                    </label>
+                    <div class="relative">
+                        <span class="absolute left-3 top-2 text-gray-500">R$</span>
+                        <input type="number" step="0.01" placeholder="0,00" [(ngModel)]="produto.preco" name="preco"
+                            class="w-full pl-10! pr-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-list text-gray-500 mr-2"></i>
+                        Categoria *
+                    </label>
+                    <input type="text" placeholder="Ex: Periféricos" [(ngModel)]="produto.categoria" name="categoria"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-boxes text-gray-500 mr-2"></i>
+                        Estoque *
+                    </label>
+                    <input type="number" placeholder="Quantidade" [(ngModel)]="produto.estoque" name="estoque"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+                </div>
+
+                <div>
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-toggle-on text-gray-500 mr-2"></i>
+                        Status *
+                    </label>
+                    <select [(ngModel)]="produto.status" name="status"
+                        class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition bg-white">
+                        <option value="ativo">Ativo</option>
+                        <option value="inativo">Inativo</option>
+                        <option value="rascunho">Rascunho</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex gap-4">
+                <div class="flex-1">
+                    <label class="block text-gray-700 font-medium mb-2">
+                        <i class="fas fa-image text-gray-500 mr-2"></i>
+                        URL da Imagem 
+                    </label>
+                    <input type="url" id="imageUrl" placeholder="https://exemplo.com/imagem.jpg" [(ngModel)]="produto.imagem_url" name="imagem_url"
+                        class="px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition">
+                </div>
+
+                <div class="w-20 h-20 border rounded">
+                    <img *ngIf="produto.imagem_url" [src]="produto.imagem_url" alt="Imagem do Produto" class="object-cover w-full h-full">
+                </div>
+            </div>
+
+
+            <div>
+                <label class="block text-gray-700 font-medium mb-2">
+                    <i class="fas fa-align-left text-gray-500 mr-2"></i>
+                    Descrição
+                </label>
+                <textarea rows="4" placeholder="Descreva o produto detalhadamente..." [(ngModel)]="produto.descricao" name="descricao"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition resize-none"></textarea>
+                <p class="text-xs text-gray-500 mt-1">Máximo 500 caracteres</p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 pt-4">
+                <a href="/"
+                    class="px-6 py-2 text-center bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition font-semibold">
+                    <i class="fas fa-times mr-2"></i>
+                    Voltar
+                </a>
+                <button type="submit"
+                    class="px-6 py-2 cursor-pointer bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold shadow-md">
+                    <i class="fas fa-save mr-2"></i>
+                    Salvar Produto
+                </button>
+            </div>
+        </form>
+    </div>

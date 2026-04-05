@@ -1,0 +1,11 @@
+@if (href) {
+    <a [href]="href" data-discover="true" >
+        <button class="{{ classname }}">
+            <ng-content></ng-content>
+        </button>
+    </a>
+} @else {
+    <button data-slot="button" class="{{ classname }}">
+        <ng-content select="text"></ng-content>
+    </button>
+}

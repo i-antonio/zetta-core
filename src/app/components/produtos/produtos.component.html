@@ -1,5 +1,13 @@
 <div class="min-h-screen">
-  <h2>📝 Cadastro de Produtos</h2>
+  <section class="py-16 container mx-auto px-4">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h2 class="text-3xl font-semibold">Produtos</h2>
+        <p class="text-gray-600 mt-2">Gerencie seus produtos cadastrados</p>
+      </div>
+      <app-button href="/shop">Ir para a loja</app-button>
+    </div>
+  </section>
 
   <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
   <div class="error" *ngIf="error">{{ error }}</div>

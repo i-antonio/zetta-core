@@ -6,29 +6,9 @@
       "preco": 5499.99,
       "imagem_url": "https://images.unsplash.com/photo-1606625000171-fa7d471da28c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxnYW1pbmclMjBsYXB0b3AlMjBjb21wdXRlcnxlbnwxfHx8fDE3NzQ0NDMzMTl8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
       "estoque": 15,
-      "categoria": "Notebooks"
-    },
-    {
-      "id": 2,
-      "nome": "Teclado Mecânico RGB",
-      "preco": 349.99,
-      "imagem_url": "https://images.unsplash.com/photo-1649899913123-90bb33c8a66a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtZWNoYW5pY2FsJTIwa2V5Ym9hcmQlMjByZ2J8ZW58MXx8fHwxNzc0NDc0NzAwfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "estoque": 100,
-      "categoria": "Periféricos",
-      "status": "disponivel"
-    },
-    {
-      "nome": "Monitor 27\" 144Hz IPS",
-      "descricao": "isso é um teste",
-      "categoria": "teste",
-      "preco": 1299.99,
-      "imagem_url": "https://images.unsplash.com/photo-1649704394792-9cd6a3995cc5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21wdXRlciUyMG1vbml0b3IlMjBzY3JlZW58ZW58MXx8fHwxNzc0MzYwNjcxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-      "marca": "",
-      "desconto": 0,
-      "estoque": 1001,
-      "status": "disponivel",
-      "acessorios": [],
-      "id": 4
+      "categoria": "Notebooks",
+      "status": "ativo",
+      "descricao": "teste 12"
     }
   ]
 }

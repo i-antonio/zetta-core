@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Usuario, Produto, Post } from '../models/models';
+import { Produto } from '../models/models';
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +11,24 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // Métodos para Usuários
-  getUsuarios(): Observable<Usuario[]> {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/usuarios`);
-  }
-
-  createUsuario(usuario: Usuario): Observable<Usuario> {
-    return this.http.post<Usuario>(`${this.apiUrl}/usuarios`, usuario);
-  }
-
-  deleteUsuario(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/usuarios/${id}`);
-  }
-
   // Métodos para Produtos
   getProdutos(): Observable<Produto[]> {
     return this.http.get<Produto[]>(`${this.apiUrl}/produtos`);
   }
 
-  // Métodos para Posts
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(`${this.apiUrl}/posts`);
+  getProdutoById(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/produtos/${id}`);
+  }
+
+  createProduto(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(`${this.apiUrl}/produtos`, produto);
+  }
+
+  updateProduto(id: number, produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.apiUrl}/produtos/${id}`, produto);
+  }
+
+  deleteProduto(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/produtos/${id}`);
   }
 }

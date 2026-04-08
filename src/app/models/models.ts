@@ -1,23 +1,13 @@
-export interface Usuario {
-  id?: number;
-  nome: string;
-  email: string;
-  telefone: string;
-  profissao: string;
-}
-
 export interface Produto {
   id: number;
   nome: string;
-  preco: number;
-  estoque: number;
+  descricao: string;
   categoria: string;
-}
-
-export interface Post {
-  id: number;
-  titulo: string;
-  conteudo: string;
-  autor: string;
-  data: string;
+  preco: number;
+  imagem_url: string;
+  marca: string;
+  desconto: number;
+  estoque: number;
+  status: string;
+  acessorios: string[];
 }

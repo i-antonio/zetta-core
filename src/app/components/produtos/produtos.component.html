@@ -1,3 +1,113 @@
+<div class="min-h-screen">
+  <section class="py-16 container mx-auto px-4">
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h2 class="text-3xl font-semibold">Produtos</h2>
+        <p class="text-gray-600 mt-2">Gerencie seus produtos cadastrados</p>
+      </div>
+      <app-button href="/produto">Novo produto</app-button>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <app-product-card
+        *ngFor="let product of produtos"
+        [id]="product.id"
+        [title]="product.nome"
+        [price]="product.preco"
+        [category]="product.categoria"
+        [imageUrl]="product.imagem_url"
+        [description]="product.descricao"
+      ></app-product-card>
+    </div>
+  </section>
+
+  <!--
+  <div class="success" *ngIf="successMessage">{{ successMessage }}</div>
+  <div class="error" *ngIf="error">{{ error }}</div>
+  
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" [(ngModel)]="newProduto.nome" 
+        required #nome="ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="descricao">Descrição:</label>
+      <input type="text" id="descricao" name="descricao" [(ngModel)]="newProduto.descricao"
+        required #descricao="ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="categoria">Categoria:</label>
+      <input type="text" id="categoria" name="categoria" [(ngModel)]="newProduto.categoria" 
+        required #categoria="ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="preco">Preço:</label>
+      <input type="number" id="preco" name="preco" [(ngModel)]="newProduto.preco" 
+        required #preco="ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="estoque">Estoque:</label>
+      <input type="number" id="estoque" name="estoque" [(ngModel)]="newProduto.estoque" 
+        required #estoque="ngModel"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="status">Status:</label>
+      <select id="status" name="status" [(ngModel)]="newProduto.status" required #status="ngModel">
+        <option value="">Selecione</option>
+        <option value="disponivel">Disponível</option>
+        <option value="indisponivel">Indisponível</option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="userForm.invalid">➕ Adicionar Produto</button>
+  </form>
+</div>
+
+<div class="card" *ngIf="editando && produtoEditando" #editform>
+  <h2>✏️ Editar Produto</h2>
+
+  <div class="form-group">
+    <label>Nome:</label>
+    <input type="text" [(ngModel)]="produtoEditando.nome">
+  </div>
+  <div class="form-group">
+    <label>Descrição:</label>
+    <input type="text" [(ngModel)]="produtoEditando.descricao">
+  </div>
+  <div class="form-group">
+    <label>Categoria:</label>
+    <input type="text" [(ngModel)]="produtoEditando.categoria">
+  </div>
+  <div class="form-group">
+    <label>Preço:</label>
+    <input type="number" [(ngModel)]="produtoEditando.preco">
+  </div>
+  <div class="form-group">
+    <label>Estoque:</label>
+    <input type="number" [(ngModel)]="produtoEditando.estoque">
+  </div>
+  <div class="form-group">
+    <label>Status:</label>
+    <select [(ngModel)]="produtoEditando.status">
+      <option value="disponivel">Disponível</option>
+      <option value="indisponivel">Indisponível</option>
+    </select>
+  </div>
+
+  <button (click)="salvarEdicao()">💾 Salvar</button>
+  <button (click)="cancelarEdicao()">❌ Cancelar</button>
+</div>
+
 <div class="card">
   <h2>🛒 Lista de Produtos</h2>
   
@@ -20,6 +130,11 @@
       <p><strong>Preço:</strong> R$ {{ produto.preco.toFixed(2) }}</p>
       <p><strong>Estoque:</strong> {{ produto.estoque }} unidades</p>
       <p><strong>Categoria:</strong> {{ produto.categoria }}</p>
+      <p><strong>Status:</strong> {{ produto.status }}</p>
+      <p><strong>Acessórios:</strong> {{ produto.acessorios }}</p>
+      <button (click)="abrirEdicao(produto)">✏️ Editar</button>
+      <button (click)="deleteProduto(produto.id)">🗑️ Excluir</button>
     </div>
   </div>
 </div>
+-->

@@ -1,5 +1,5 @@
 {
-  "name": "json-server-angular-project",
+  "name": "zetta-core",
   "version": "1.0.0",
   "description": "Projeto Angular com JSON Server para criar uma API REST fake",
   "scripts": {
@@ -29,7 +29,11 @@
     "@angular/forms": "^19.1.0",
     "@angular/platform-browser": "^19.1.0",
     "@angular/platform-browser-dynamic": "^19.1.0",
+    "@angular/router": "^19.2.20",
+    "@tailwindcss/postcss": "^4.2.2",
+    "postcss": "^8.5.8",
     "rxjs": "~7.8.0",
+    "tailwindcss": "^4.2.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },

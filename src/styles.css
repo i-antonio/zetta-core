@@ -1,26 +1,69 @@
+@import "tailwindcss";
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  border-color: var(--border);
+  outline-color: var(--ring);
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 20px;
+  font-family: var(--default-font-family);
   min-height: 100vh;
 }
 
+:root {
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --default-font-family: var(--font-sans);
+  --default-mono-font-family: var(--font-mono);
+  --border: #0000001a;
+  --ring: oklch(70.8% 0 0);
+}
+
+@theme {
+  --color-accent: #e9ebef;
+  --accent-foreground: #030213;
+}
+
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%
+}
+
+@media (min-width: 40rem) {
+  .container {
+    max-width: 40rem
+  }
+}
+
+@media (min-width: 48rem) {
+  .container {
+    max-width: 48rem
+  }
+}
+
+@media (min-width: 64rem) {
+  .container {
+    max-width: 64rem
+  }
+}
+
+@media (min-width: 80rem) {
+  .container {
+    max-width: 80rem
+  }
+}
+
+@media (min-width: 96rem) {
+  .container {
+    max-width: 96rem
+  }
 }
 
 h1 {
   color: white;
   text-align: center;
   margin-bottom: 30px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .card {
@@ -28,7 +71,7 @@ h1 {
   border-radius: 10px;
   padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .card h2 {
@@ -45,34 +88,6 @@ h1 {
   flex-wrap: wrap;
 }
 
-button {
-  background: #667eea;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s;
-}
-
-button:hover {
-  background: #5568d3;
-}
-
-button:disabled {
-  background: #ccc;
-  cursor: not-allowed;
-}
-
-button.delete {
-  background: #e74c3c;
-}
-
-button.delete:hover {
-  background: #c0392b;
-}
-
 .form-group {
   margin-bottom: 15px;
 }
@@ -85,6 +100,14 @@ label {
 }
 
 input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+select {
   width: 100%;
   padding: 10px;
   border: 1px solid #ddd;

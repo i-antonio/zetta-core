@@ -1,0 +1,48 @@
+<header class="sticky top-0 z-50 w-full border-b bg-white">
+    <div class="container mx-auto px-4!">
+        <div class="flex h-16 items-center justify-between">
+            <div class="flex items-center gap-8">
+                <a class="text-2xl font-semibold" href="/" data-discover="true">Zetta Core</a>
+
+                <nav class="hidden md:flex gap-6">
+                    <a class="hover:text-gray-600 transition-colors" href="/">Início</a>
+                    <a class="hover:text-gray-600 transition-colors" href="/produto" data-discover="true">Cadastrar produto</a>
+                </nav>
+            </div>
+
+            <button class="md:hidden flex flex-col gap-1.5 p-2" (click)="toggleMenu()">
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+                <span class="block w-6 h-0.5 bg-gray-800"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div *ngIf="menuAberto" 
+     class="fixed inset-0 bg-black/50 z-40 md:hidden"
+     (click)="fecharMenu()">
+</div>
+
+<div class="fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-xl transform transition-transform duration-300 md:hidden"
+     [class.translate-x-0]="menuAberto"
+     [class.-translate-x-full]="!menuAberto">
+
+    <div class="flex items-center justify-between p-4 border-b">
+        <span class="text-xl font-semibold">Zetta Core</span>
+        <button (click)="fecharMenu()" class="p-2 text-gray-600 hover:text-gray-900">
+            ✕
+        </button>
+    </div>
+
+    <nav class="flex flex-col p-4 gap-4">
+        <a href="/" (click)="fecharMenu()"
+            class="text-lg hover:text-gray-600 transition-colors">
+            Início
+        </a>
+        <a href="/produto" (click)="fecharMenu()"
+            class="text-lg hover:text-gray-600 transition-colors">
+            Cadastrar produto
+        </a>
+    </nav>
+</div>

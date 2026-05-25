@@ -42,6 +42,7 @@
       "nome": "Notebook",
       "preco": 3500,
       "estoque": 15,
+<<<<<<< Updated upstream
       "categoria": "Eletrônicos"
     },
     {
@@ -79,6 +80,51 @@
       "conteudo": "Node.js permite executar JavaScript no servidor.",
       "autor": "Maria Santos",
       "data": "2026-03-12"
+=======
+      "categoria": "Notebooks",
+      "status": "ativo",
+      "descricao": "teste 12"
+    },
+    {
+      "nome": "Samsung Galaxy A15",
+      "preco": 1500,
+      "categoria": "Celular",
+      "status": "ativo",
+      "estoque": 500,
+      "imagem_url": "https://imgs.search.brave.com/TbEzRm1U1phr8xb9PubqmRbKdbZUANdw_WzVDf9mgEA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/b2RjZG4uY29tLmJy/L3dwLWNvbnRlbnQv/dXBsb2Fkcy9vZmVy/dGFzL3Byb2R1dG9z/LzIwMjQvMDIvc21h/cnRwaG9uZS1zYW1z/dW5nLWdhbGF4eS1h/MTUtNGctMjU2Z2It/dmVyZGUtY2xhcm8u/anBn",
+      "descricao": "Smartphone Samsung Galaxy A15 4G 128GB Tela 6.5\" 4GB RAM Câmera Tripla + Selfie 13MP - Azul Escuro",
+      "id": 2
+    },
+    {
+      "nome": "Logitech G403 HERO",
+      "categoria": "Periféricos",
+      "preco": 250,
+      "descricao": "Mouse Gamer Logitech G403 HERO com RGB LIGHTSYNC, 6 Botões Programáveis, Ajuste de Peso e Sensor HERO 25K - 910-005631",
+      "imagem_url": "https://images9.kabum.com.br/produtos/fotos/102649/mouse-gamer-logitech-g403-hero-com-rgb-lightsync-6-botoes-programaveis-ajuste-de-peso-e-sensor-hero-25k-910-005631_1700850718_gg.jpg",
+      "estoque": 100,
+      "status": "ativo",
+      "id": 3
+    },
+    {
+      "nome": "Headset Gamer Fuxi-H3",
+      "descricao": "Havit Fone de Ouvido Headset Gamer Fuxi-H3 Black Com Fio e Sem Fio, Wireless 2,4GHz, Bluetooth, Cabo USB-C",
+      "imagem_url": "https://m.media-amazon.com/images/I/71g1gS6qGmL._AC_SX522_.jpg",
+      "estoque": 50,
+      "preco": 174,
+      "status": "ativo",
+      "categoria": "Periféricos",
+      "id": 4
+    },
+    {
+      "nome": "Teclado T-DAGGER Bora RGB",
+      "categoria": "Teclado",
+      "preco": 150,
+      "imagem_url": "https://images3.kabum.com.br/produtos/fotos/108983/teclado-mecanico-gamer-t-dagger-bora-rgb-switch-outemu-blue-abnt2-t-tgk315-blue_1640725246_gg.jpg",
+      "estoque": 233,
+      "descricao": "Teclado Mecânico Gamer T-Dagger Bora, RGB, Switch Outemu Blue, ABNT2 - T-TGK315-BLUE",
+      "status": "ativo",
+      "id": 5
+>>>>>>> Stashed changes
     }
   ]
 }

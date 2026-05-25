@@ -20,6 +20,8 @@ export class ProdutosComponent implements OnInit {
   successMessage: string | null = null;
   editando = false; 
   produtoEditando: Produto | null = null;
+  termoBusca = '';
+  produtosFiltrados: Produto[] = [];
 
   newProduto: Produto = {
     nome: '',
@@ -47,6 +49,7 @@ export class ProdutosComponent implements OnInit {
     this.apiService.getProdutos().subscribe({
       next: (data) => {
         this.produtos = data;
+        this.produtosFiltrados = data;
         this.loading = false;
       },
       error: (err) => {
@@ -57,6 +60,7 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
+<<<<<<< Updated upstream
   onSubmit(): void {
     if (!this.newProduto.nome || !this.newProduto.categoria || this.newProduto.preco <= 0
       || this.newProduto.estoque < 0 || !this.newProduto.status) return;
@@ -86,6 +90,22 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
+=======
+  filtrarProdutos(): void {
+  const termo = this.termoBusca.toLowerCase().trim();
+
+  if (!termo) {
+    this.produtosFiltrados = this.produtos;
+    return;
+  }
+
+  this.produtosFiltrados = this.produtos.filter(p =>
+    p.nome.toLowerCase().includes(termo) ||
+    p.categoria.toLowerCase().includes(termo)
+  );
+}
+
+>>>>>>> Stashed changes
   deleteProduto(id: number | undefined): void {
     if (!id || !confirm('Tem certeza que deseja excluir este produto?')) return;
 

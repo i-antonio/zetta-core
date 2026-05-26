@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
 import { Produto } from '../../models/models';
+import { ButtonComponent } from '../button/button.component';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-produtos',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ButtonComponent, ProductCardComponent],
   templateUrl: './produtos.component.html',
   styleUrls: ['./produtos.component.css']
 })
@@ -20,21 +22,6 @@ export class ProdutosComponent implements OnInit {
   successMessage: string | null = null;
   editando = false; 
   produtoEditando: Produto | null = null;
-  termoBusca = '';
-  produtosFiltrados: Produto[] = [];
-
-  newProduto: Produto = {
-    nome: '',
-    descricao: '',
-    categoria: '',
-    preco: 0,
-    imagem_url: '',
-    marca: '',
-    desconto: 0,
-    estoque: 0,
-    status: '',
-    acessorios: []
-  };
 
   constructor(private apiService: ApiService) { }
 
@@ -49,7 +36,6 @@ export class ProdutosComponent implements OnInit {
     this.apiService.getProdutos().subscribe({
       next: (data) => {
         this.produtos = data;
-        this.produtosFiltrados = data;
         this.loading = false;
       },
       error: (err) => {
@@ -60,52 +46,6 @@ export class ProdutosComponent implements OnInit {
     });
   }
 
-<<<<<<< Updated upstream
-  onSubmit(): void {
-    if (!this.newProduto.nome || !this.newProduto.categoria || this.newProduto.preco <= 0
-      || this.newProduto.estoque < 0 || !this.newProduto.status) return;
-
-    this.apiService.createProduto(this.newProduto).subscribe({
-      next: () => {
-        this.successMessage = '✅ Produto criado com sucesso!';
-        this.newProduto = {
-          nome: '',
-          descricao: '',
-          categoria: '',
-          preco: 0,
-          imagem_url: '',
-          marca: '',
-          desconto: 0,
-          estoque: 0,
-          status: '',
-          acessorios: []
-        };
-        this.loadProdutos();
-        setTimeout(() => this.successMessage = null, 3000);
-      },
-      error: (err) => {
-        this.error = 'Erro ao criar produto.';
-        console.error('Erro:', err);
-      }
-    });
-  }
-
-=======
-  filtrarProdutos(): void {
-  const termo = this.termoBusca.toLowerCase().trim();
-
-  if (!termo) {
-    this.produtosFiltrados = this.produtos;
-    return;
-  }
-
-  this.produtosFiltrados = this.produtos.filter(p =>
-    p.nome.toLowerCase().includes(termo) ||
-    p.categoria.toLowerCase().includes(termo)
-  );
-}
-
->>>>>>> Stashed changes
   deleteProduto(id: number | undefined): void {
     if (!id || !confirm('Tem certeza que deseja excluir este produto?')) return;
 
@@ -144,4 +84,3 @@ export class ProdutosComponent implements OnInit {
   })
   }
 }
-
